@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>E-Book Contact us</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../../style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <div class="header-1 px-auto">
+        <div class="d-flex align-items-center">
+          <img src="../../images/logo.png" style="height: 10vh" />
+          <div class="row m-0">
+            <a href="#" class="logo" style="color: #105a60"> Book-shelf</a>
+            <a href="#" class="fs-5 fw-2" style="color: #fc5350"> store</a>
+          </div>
+        </div>
+
+        <form action="" class="search-form">
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a class="fas fa-user" href="../../auth/sign-in/signin.html"> </a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <a class="fas fa-list fs-1"> </a>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+            style="width: 22vw"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="fas fa-user p-3 shadow rounded-circle"> </a>
+                <a class="fs-3 fw-2" style="color: #fc5350" id="userName"
+                  >Profile</a
+                >
+                <div class="align-items-center" id="userBox">
+                  <p class="text-dark p-2 m-0"></p>
+                </div>
+              </h5>
+
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body pt-5">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item py-4">
+                  <h5>
+                    <a
+                      class="fas fa-shopping-cart fs-3"
+                      href="../../products.html"
+                    >
+                    </a>
+                    <a class="fs-4 fw-4" href="../../products.html">Product</a>
+                  </h5>
+                </li>
+
+                <li class="nav-item">
+                  <h5>
+                    <a
+                      class="fas fa-cloud-upload-alt fs-3"
+                      href="./products.html"
+                    >
+                    </a>
+                    <a
+                      class="fs-4 fw-4"
+                      href="../upload-product/productupload.html"
+                      >Upload-Product</a
+                    >
+                  </h5>
+                </li>
+              </ul>
+            </div>
+
+            <div class="offcanvas-footer">
+              <div
+                onclick="logoutUser('userData')"
+                class="btn w-75 fs-5 text-white mb-3"
+              >
+                Log out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-2">
+        <!-- <nav class="navbar justify-content-center"> -->
+        <nav class="navbar d-flex justify-content-center">
+          <!-- <ul class="navbar-nav"> -->
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="../../index.html"
+              >Home</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../../products.html">products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="list-style: none"
+            >
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="../blog.html">Blogs</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../aboutus.html">about us</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#">contact us</a>
+              </li>
+            </ul>
+          </li>
+        </nav>
+      </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- bottom navbar  -->
+
+    <nav class="bottom-navbar">
+      <a href="../../index.html" class="fas fa-home"></a>
+      <a href="../../products.html" class="fas fa-shopping-cart"></a>
+      <a href="./contactus.html" class="fas fa-comments"></a>
+    </nav>
+
+    <div
+      class="row m-0 p-0"
+      style="
+        background: url(../../images/banner2.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div
+        class="col-12 p-0 text-center justify-content-center align-items-center pt-5"
+        style="
+          background: linear-gradient(
+            90deg,
+            rgba(237, 175, 175, 0.6) 0%,
+            rgba(148, 187, 233, 0.6) 100%
+          );
+          height: 60vh;
+        "
+      >
+        <div class="pt-5">
+          <div
+            class="pt-5 fw-bold"
+            style="color: #ffffff; font-size: 4.8rem; line-height: 9rem"
+          >
+            Contact Us
+          </div>
+          <p>
+            <a
+              href="../../index.html"
+              class="fw-bold pe-2"
+              style="color: #105a60; font-size: 1.8rem"
+              >Home</a
+            >
+            <a class="fas fa-circle" style="color: #ffffff"></a>
+            <a class="fw-bold ps-2" style="color: #105a60; font-size: 1.8rem">
+              Contact Us</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <!-- Contact 1 - Bootstrap Brain Component -->
+    <section class="py-3 py-md-5 mt-5 mb-5">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+            <h1
+              class="mb-4 display-5 text-center fw-bold"
+              style="color: #105a60"
+            >
+              Contact Form
+            </h1>
+            <p class="text-secondary mb-5 text-center fs-3">
+              The best way to contact us is to use our contact form below.
+              Please fill out all of the required fields and we will get back to
+              you as soon as possible.
+            </p>
+            <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-lg-center">
+          <div class="col-12 col-lg-9">
+            <div class="bg-white border rounded shadow-sm overflow-hidden">
+              <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
+                <div class="col-12">
+                  <label for="fullname" class="form-label fs-5"
+                    >Full Name <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullname"
+                    name="fullname"
+                    value=""
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label"
+                    >Email <span class="text-danger">*</span></label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <a class="fas fa-envelope fs-3"></a>
+                    </span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      value=""
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="phone" class="form-label fs-5"
+                    >Phone Number</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <a class="fas fa-phone fs-3"></a>
+                    </span>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label fs-5"
+                    >Message <span class="text-danger">*</span></label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="d-grid">
+                    <button
+                      class="btn btn-primary btn-lg"
+                      type="submit"
+                      onclick="add()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- form -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3 style="color: #105a60">our locations</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> pakistan </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">quick links</h3>
+          <a href="../index.html"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="../../products.html">
+            <i class="fas fa-arrow-right"></i> product
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">extra links</h3>
+          <a href="./aboutus.html">
+            <i class="fas fa-arrow-right"></i> account info
+          </a>
+          <a href="./shippingdetails.html">
+            <i class="fas fa-arrow-right"></i> privacy policy
+          </a>
+          <a href="../index.html">
+            <i class="fas fa-arrow-right"></i> search terms
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +92 333 3389824 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +92 322 2316126 </a>
+
+          <a href="#">
+            <i class="fas fa-envelope"></i> yasirali.87612@gmail.com
+          </a>
+          <img src="../../images/worldmap.png" class="map" alt="" />
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a class="fab fa-twitter"></a>
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-linkedin"></a>
+      </div>
+
+      <div class="credit">
+        created by <span>Misbah Meraj </span>copyright ©2024 all rights
+        reserved!
+      </div>
+    </section>
+
+    <!-- loader  -->
+
+    
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script type="module" src="./contactus.js"></script>
+  </body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Blog</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <div class="header-1 px-auto">
+        <div class="d-flex align-items-center">
+          <img src="../images/logo.png" style="height: 10vh" />
+          <div class="row m-0">
+            <a href="#" class="logo" style="color: #105a60"> Book-shelf</a>
+            <a href="#" class="fs-5 fw-2" style="color: #fc5350"> store</a>
+          </div>
+        </div>
+
+        <form action="" class="search-form">
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a class="fas fa-user" href="./auth/sign-in/signin.html"> </a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <a class="fas fa-list fs-1"> </a>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+            style="width: 22vw"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="fas fa-user p-3 shadow rounded-circle"> </a>
+                <a class="fs-3 fw-2" style="color: #fc5350" id="userName"
+                  >Profile</a
+                >
+                <div class="align-items-center" id="userBox">
+                  <p class="text-dark p-2 m-0"></p>
+                </div>
+              </h5>
+
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body pt-5">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item py-4">
+                  <h5>
+                    <a
+                      class="fas fa-shopping-cart fs-3"
+                      href="../products.html"
+                    >
+                    </a>
+                    <a class="fs-4 fw-4" href="../products.html">Product</a>
+                  </h5>
+                </li>
+
+                <li class="nav-item">
+                  <h5>
+                    <a
+                      class="fas fa-cloud-upload-alt fs-3"
+                      href="./upload-product/productupload.html"
+                    >
+                    </a>
+                    <a
+                      class="fs-4 fw-4"
+                      href="./upload-product/productupload.html"
+                      >Upload-Product</a
+                    >
+                  </h5>
+                </li>
+              </ul>
+            </div>
+
+            <div class="offcanvas-footer">
+              <div
+                onclick="logoutUser('userData')"
+                class="btn w-75 fs-5 text-white mb-3"
+              >
+                Log out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-2">
+        <!-- <nav class="navbar justify-content-center"> -->
+        <nav class="navbar d-flex justify-content-center">
+          <!-- <ul class="navbar-nav"> -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html"
+              >Home</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../products.html">products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="list-style: none"
+            >
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="./Pages/blog.html">Blogs</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./aboutus.html">about us</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="./contactus/contactus.html"
+                  >contact us</a
+                >
+              </li>
+            </ul>
+          </li>
+        </nav>
+      </div>
+    </header>
+    <!-- header section ends -->
+
+    <!-- bottom navbar  -->
+
+    <nav class="bottom-navbar">
+      <a href="../index.html" class="fas fa-home"></a>
+      <a href="../products.html" class="fas fa-shopping-cart"></a>
+      <a href="../Pages/contactus/contactus.html" class="fas fa-comments"></a>
+    </nav>
+
+    <!--  -->
+    <!--about  -->
+    <div
+      class="row m-0 p-0"
+      style="
+        background: url(../images/banner2.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div
+        class="col-12 p-0 text-center justify-content-center align-items-center pt-5"
+        style="
+          background: linear-gradient(
+            90deg,
+            rgba(237, 175, 175, 0.6) 0%,
+            rgba(148, 187, 233, 0.6) 100%
+          );
+          height: 60vh;
+        "
+      >
+        <div class="pt-5">
+          <div
+            class="pt-5 fw-bold"
+            style="color: #ffffff; font-size: 4.8rem; line-height: 9rem"
+          >
+            Blogs
+          </div>
+          <p>
+            <a
+              href="../index.html"
+              class="fw-bold pe-2"
+              style="color: #105a60; font-size: 1.8rem"
+              >Home</a
+            >
+            <a class="fas fa-circle" style="color: #ffffff"></a>
+            <!-- <span class="fw-semibold fs-3" style="color: #105a60;">/ </span>  -->
+            <a class="fw-bold ps-2" style="color: #105a60; font-size: 1.8rem"
+              >Blogs</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- mid -->
+
+    <!-- Blog 4 - Bootstrap Brain Component -->
+
+    <!-- <div class="container"> -->
+    <div class="row m-0 px-2 pt-5">
+      <div class="col-12 col-md-10 col-lg-8 ps-5">
+        <h3 class="fs-2 fw-bold mb-4" style="color: #fc5350">Blog</h3>
+        <h2
+          class="mb-4 fs-3 fw-semi-bold lh-base text-uppercase"
+          style="color: #105a60"
+        >
+          Welcome to our Book-Shelf Store! We understand the joy of diving into
+          a captivating story or delving into the depths of knowledge within the
+          pages of an eBook. In this series of blogs, we'll explore various
+          genres, recommend some must-read eBooks, and provide tips on how to
+          make the most of your reading experience. Whether you're a seasoned
+          bookworm or just starting your literary journey, we've got something
+          for everyone. Let's embark on this adventure together and discover
+          your next favorite eBook!
+        </h2>
+        <button
+          type="button"
+          class="btn btn-lg btn-primary mb-3 mb-md-4 mb-xl-5"
+        >
+          All Blog Posts
+        </button>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <div class="row m-0 px-2">
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  style="height: 40vh; width: 450px"
+                  loading="lazy"
+                  src="../images/blog-1.webp"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                      >Alex Johnson</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >Navigating the Digital Library</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                This blog can offer advice on how to effectively explore and
+                utilize your E-book store's digital library, including tips on
+                searching for specific titles, discovering new genres, and
+                managing your digital reading collection.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  loading="lazy"
+                  src="../images/blog-2.jpg"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                      >Emily Carter</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >Unlocking the World of E-books</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                This blog can serve as a beginner's guide to E-books, covering
+                topics such as how to choose the right E-reader device,
+                understanding different E-book formats, and accessing free
+                E-book resources available store.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  style="height: 40vh; width: 450px"
+                  loading="lazy"
+                  src="../images/blog-3.webp"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                    >
+                      Ryan Thompson</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >E-book Trends</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                Jessica can delve into the latest trends in E-book consumption,
+                discussing popular genres, emerging authors, and innovative
+                digital reading features that are shaping the landscape of the
+                E-book industry.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  style="height: 40vh; width: 450px"
+                  loading="lazy"
+                  src="../images/blog-4.webp"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                    >
+                      Jessica Martin</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >The Benefits of E-books</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                Ryan can highlight the advantages of E-books over traditional
+                print books, such as convenience, accessibility, and
+                eco-friendliness. This blog can also address common
+                misconceptions about E-books and debunk any myths surrounding
+                digital reading.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  style="height: 40vh; width: 450px"
+                  loading="lazy"
+                  src="../images/blog-5.webp"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                      >Sarah Lewis</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >From Page to Screen</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                Sarah can explore the process of adapting printed books into
+                digital formats, discussing the challenges and opportunities
+                involved in creating E-books. This blog can also feature
+                interviews with authors who have successfully transitioned their
+                works into the digital.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 py-4">
+        <article>
+          <div class="card border-0">
+            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+              <a href="#!">
+                <img
+                  class="img-fluid bsb-scale bsb-hover-scale-up"
+                  style="height: 40vh; width: 450px"
+                  loading="lazy"
+                  src="../images/blog-6.webp"
+                  alt="Business"
+                />
+              </a>
+            </figure>
+            <div class="card-body border bg-white p-4">
+              <div class="entry-header mb-3">
+                <ul class="entry-meta list-unstyled d-flex mb-2">
+                  <li>
+                    <a
+                      class="link-primary text-decoration-none fw-bold fs-5"
+                      href="#!"
+                      style="color: #105a60"
+                      >Daniel Wright</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="card-title entry-title h4 mb-0">
+                  <a
+                    class="link-dark text-decoration-none"
+                    href="#!"
+                    style="color: #fc5350"
+                    >Maximizing Your E-book Store Experience</a
+                  >
+                </h2>
+              </div>
+              <p class="card-text entry-summary text-secondary mb-3 fs-5">
+                Daniel can share insider tips for getting the most out of your
+                E-book store, including how to take advantage of promotional
+                offers, navigate subscription services, and participate in
+                digital book clubs or author events hosted by your platform.
+              </p>
+              <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more"
+                >Read More</a
+              >
+            </div>
+            <div class="card-footer border border-top-0 bg-light p-4">
+              <ul
+                class="entry-meta list-unstyled d-flex align-items-center m-0"
+              >
+                <li>
+                  <a
+                    class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
+                    href="#!"
+                  >
+                    <a class="fas fa-user"></a>
+                    <span class="ms-2 fs-7" style="color: #105a60"
+                      >7 Feb 2024</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3 style="color: #105a60">our locations</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> pakistan </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">quick links</h3>
+          <a href="../index.html"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="../products.html">
+            <i class="fas fa-arrow-right"></i> Product
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">extra links</h3>
+          <a href="./aboutus.html">
+            <i class="fas fa-arrow-right"></i> account info
+          </a>
+
+          <a href="./shippingdetails.html">
+            <i class="fas fa-arrow-right"></i> privacy policy
+          </a>
+          <a href="../index.html">
+            <i class="fas fa-arrow-right"></i> search terms
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +92 333 3389824 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +92 322 2316126 </a>
+
+          <a href="#">
+            <i class="fas fa-envelope"></i> yasirali.87612@gmail.com
+          </a>
+          <img src="../images/worldmap.png" class="map" alt="" />
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a class="fab fa-twitter"></a>
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-linkedin"></a>
+      </div>
+
+      <div class="credit">
+        created by <span>Misbah Meraj </span>copyright ©2024 all rights
+        reserved!
+      </div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader  -->
+
+    <!-- <div class="loader-container">
+      <img src="../images/orbit.gif" alt="" />
+    </div> -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="../app.js"></script>
+  </body>
+</html>

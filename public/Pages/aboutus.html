@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>About us</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <div class="header-1 px-auto">
+        <div class="d-flex align-items-center">
+          <img src="../images/logo.png" style="height: 10vh" />
+          <div class="row m-0">
+            <a href="#" class="logo" style="color: #105a60"> Book-shelf</a>
+            <a href="#" class="fs-5 fw-2" style="color: #fc5350"> store</a>
+          </div>
+        </div>
+
+        <form action="" class="search-form">
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a class="fas fa-user" href="./auth/sign-in/signin.html"> </a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <a class="fas fa-list fs-1"> </a>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+            style="width: 22vw"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="fas fa-user p-3 shadow rounded-circle"> </a>
+                <a class="fs-3 fw-2" style="color: #fc5350" id="userName"
+                  >Profile</a
+                >
+                <div class="align-items-center" id="userBox">
+                  <p class="text-dark p-2 m-0"></p>
+                </div>
+              </h5>
+
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body pt-5">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item py-4">
+                  <h5>
+                    <a
+                      class="fas fa-shopping-cart fs-3"
+                      href="../products.html"
+                    >
+                    </a>
+                    <a class="fs-4 fw-4" href="../products.html">Product</a>
+                  </h5>
+                </li>
+
+                <li class="nav-item">
+                  <h5>
+                    <a
+                      class="fas fa-cloud-upload-alt fs-3"
+                      href="./upload-product/productupload.html"
+                    >
+                    </a>
+                    <a
+                      class="fs-4 fw-4"
+                      href="./upload-product/productupload.html"
+                      >Upload-Product</a
+                    >
+                  </h5>
+                </li>
+              </ul>
+            </div>
+
+            <div class="offcanvas-footer">
+              <div
+                onclick="logoutUser('userData')"
+                class="btn w-75 fs-5 text-white mb-3"
+              >
+                Log out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-2">
+        <nav class="navbar d-flex justify-content-center">
+          <!-- <ul class="navbar-nav"> -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../products.html">products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="list-style: none"
+            >
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="./blog.html">Blogs</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">about us</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="./contactus/contactus.html"
+                  >contact us</a
+                >
+              </li>
+            </ul>
+          </li>
+        </nav>
+      </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- bottom navbar  -->
+
+    <nav class="bottom-navbar">
+      <a href="../index.html" class="fas fa-home"></a>
+      <a href="../products.html" class="fas fa-shopping-cart"></a>
+      <a href="../Pages/contactus/contactus.html" class="fas fa-comments"></a>
+    </nav>
+
+    <!--about  -->
+
+    <div
+      class="row m-0 p-0"
+      style="
+        background: url(../images/banner2.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div
+        class="col-12 p-0 text-center justify-content-center align-items-center pt-5"
+        style="
+          background: linear-gradient(
+            90deg,
+            rgba(237, 175, 175, 0.6) 0%,
+            rgba(148, 187, 233, 0.6) 100%
+          );
+          height: 60vh;
+        "
+      >
+        <div class="pt-5">
+          <div
+            class="pt-5 fw-bold"
+            style="color: #ffffff; font-size: 4.8rem; line-height: 9rem"
+          >
+            About Us
+          </div>
+          <p>
+            <a
+              href="../index.html"
+              class="fw-bold pe-2"
+              style="color: #105a60; font-size: 1.8rem"
+              >Home</a
+            >
+            <a class="fas fa-circle" style="color: #ffffff"></a>
+
+            <a class="fw-bold ps-2" style="color: #105a60; font-size: 1.8rem">
+              About Us</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end -->
+
+    <div
+      class="row m-0 p-0 py-5 px-3 align-items-center"
+      style="min-height: 90vh"
+    >
+      <div class="col-6 position-relative">
+        <div class="position-absolute ms-5 mt-5">
+          <img src="../images/abo-01.jpg" alt="" class="picture" />
+        </div>
+        <div style="width: 80%; height: 60vh; background: #fc5350" ;></div>
+      </div>
+      <div class="col-6" style="text-align: start">
+        <img src="../images/water-drop.png" alt="" class="pt-5 pb-3" />
+        <h2 class="pb-3 fs-1 pt-4" style="color: #105a60" ;>
+          Give life to reading
+        </h2>
+
+        <p class="text-secondary fs-4">
+          Celebrating the Essence of Reading: Welcome to Book-Shelf At
+          Book-Shelf-store, we believe in the transformative power of literature
+          to enlighten minds, spark imagination, and foster connections across
+          boundaries. Our mission is to ignite the passion for reading and bring
+          stories to life in the digital age. Whether you're a seasoned
+          bibliophile or a curious newcomer, join us on a journey where every
+          page turns into an adventure.
+        </p>
+        <p class="text-secondary mt-3 fs-4">
+          Explore our vast collection of e-books, curated with care to inspire,
+          entertain, and enrich your reading experience. Let's embark on a
+          literary odyssey together and give life to reading.
+        </p>
+      </div>
+    </div>
+    <!-- about-end -->
+    <div
+      class="row m-0 py-5 mb-5 pt-5 px-3 align-items-center"
+      style="min-height: 90vh"
+    >
+      <div
+        class="col-6 d-flex flex-column justify-content-center"
+        style="text-align: start"
+      >
+        <div>
+          <img
+            src="../images/server.png"
+            alt=""
+            class="pt-5 pb-3"
+            style="width: 3vw"
+          />
+        </div>
+        <h2 class="pb-3 fs-1 pt-4" style="color: #105a60" ;>
+          Seed of knowledge
+        </h2>
+
+        <p class="text-secondary fs-4">
+          Welcome to Seed of Knowledge, where the journey of enlightenment
+          begins with the turning of a page. Rooted in our love for learning and
+          the boundless potential of the written word, Seed of Knowledge is more
+          than just a bookstore – it's a nurturing ground for curious minds and
+          avid learners alike.
+        </p>
+        <p class="text-secondary mt-3 fs-4">
+          Here at Seed of Knowledge, we believe that every book holds the
+          potential to plant seeds of wisdom, growth, and understanding. Our
+          mission is to cultivate a diverse selection of books that not only
+          entertain but also enlighten, empower, and educate our readers
+        </p>
+      </div>
+      <div class="col-6 position-relative">
+        <div class="position-absolute mt-5">
+          <img src="../images/about-02.webp" alt="" class="picture" />
+        </div>
+        <div
+          style="
+            width: 85%;
+            height: 60vh;
+            background: #fc5350;
+            margin-left: 70px;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <!-- - end -->
+
+    <!-- team -->
+    <div class="text-center py-5 mt-5">
+      <h1 class="bg-white pt-5 mt-5 pb-4 fw-bold fs-1" style="color: #105a60">
+        ABOUT OUR TEAM
+      </h1>
+
+      <div class="row m-0 py-5 justify-content-evenly">
+        <div class="box-one-Grey shadow-1 col-3">
+          <div
+            class="position-relative d-flex justify-content-center align-items-end icon-div"
+          >
+            <div style="width: 70%" class="position-absolute icon-show">
+              <div class="d-flex justify-content-evenly">
+                <img
+                  src="../images/social-media.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/facebook (8).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/pinterest.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/instagram (3).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+              </div>
+            </div>
+            <div>
+              <img src="../images/team-1.jpg.webp" />
+            </div>
+          </div>
+          <div class="text-center pt-3 pb-3">
+            <h5 class="fw-bold fs-4" style="color: #fc5350" ;>
+              Adrian Molises
+            </h5>
+            <p class="fw-bold fs-5" style="color: #105a60">CEO</p>
+          </div>
+        </div>
+
+        <div class="box-one-Grey shadow-1 col-3">
+          <div
+            class="position-relative d-flex justify-content-center align-items-end icon-div"
+          >
+            <div style="width: 70%" class="position-absolute icon-show">
+              <div class="d-flex justify-content-evenly">
+                <img
+                  src="../images/social-media.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/facebook (8).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/pinterest.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/instagram (3).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+              </div>
+            </div>
+            <div>
+              <img src="../images/team-2.jpg.webp" />
+            </div>
+          </div>
+          <div class="text-center pt-3 pb-3">
+            <h5 class="fw-bold fs-4" style="color: #fc5350" ;>
+              Arthur MaGregor
+            </h5>
+            <p class="fw-bold fs-5" style="color: #105a60">Marketing Manager</p>
+          </div>
+        </div>
+        <div class="box-one-Grey shadow-1 col-3">
+          <div
+            class="position-relative d-flex justify-content-center align-items-end icon-div"
+          >
+            <div style="width: 70%" class="position-absolute icon-show">
+              <div class="d-flex justify-content-evenly">
+                <img
+                  src="../images/social-media.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/facebook (8).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/pinterest.png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+                <img
+                  src="../images/instagram (3).png"
+                  alt=""
+                  style="height: 28px; width: 28px"
+                />
+              </div>
+            </div>
+            <div>
+              <img src="../images/team-3.jpg.webp" />
+            </div>
+          </div>
+          <div class="text-center pt-3 pb-3">
+            <h5 class="fw-bold fs-4" style="color: #fc5350" ;>Anna Hanzen</h5>
+            <p class="fw-bold fs-5" style="color: #105a60">
+              Company Supervisor
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- team-end -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3 style="color: #105a60">our locations</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> pakistan </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">quick links</h3>
+          <a href="../index.html"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="../products.html">
+            <i class="fas fa-arrow-right"></i> product
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">extra links</h3>
+          <a href="./aboutus.html">
+            <i class="fas fa-arrow-right"></i> account info
+          </a>
+
+          <a href="./shippingdetails.html">
+            <i class="fas fa-arrow-right"></i> privacy policy
+          </a>
+          <a href="./index.html">
+            <i class="fas fa-arrow-right"></i> search terms
+          </a>
+        </div>
+
+        <div class="box">
+          <h3 style="color: #105a60">contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +92 333 3389824 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +92 322 2316126 </a>
+
+          <a href="#">
+            <i class="fas fa-envelope"></i> yasirali.87612@gmail.com
+          </a>
+          <img src="../images/worldmap.png" class="map" alt="" />
+        </div>
+      </div>
+
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a class="fab fa-twitter"></a>
+        <a class="fab fa-instagram"></a>
+        <a class="fab fa-linkedin"></a>
+      </div>
+
+      <div class="credit">
+        created by <span>Misbah Meraj </span>copyright ©2024 all rights
+        reserved!
+      </div>
+    </section>
+    <!-- footer section ends -->
+
+    <!-- loader  -->
+
+   
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="app.js"></script>
+  </body>
+</html>

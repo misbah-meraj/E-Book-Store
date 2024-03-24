@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Single Product</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../../style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <div class="header-1 px-auto">
+        <div class="d-flex align-items-center">
+          <img src="../../images/logo.png" style="height: 10vh" />
+          <div class="row m-0">
+            <a href="#" class="logo" style="color: #105a60"> Book-shelf</a>
+            <a href="#" class="fs-5 fw-2" style="color: #fc5350"> store</a>
+          </div>
+        </div>
+        <form action="" class="search-form">
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a class="fas fa-user" href="../../auth/sign-in/signin.html"> </a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <a class="fas fa-list fs-1"> </a>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+            style="width: 22vw"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="fas fa-user p-3 shadow rounded-circle"> </a>
+                <a class="fs-3 fw-2" style="color: #fc5350" id="userName"
+                  >Profile</a
+                >
+                <div class="align-items-center" id="userBox">
+                  <p class="text-dark p-2 m-0"></p>
+                </div>
+              </h5>
+
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body pt-5">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item py-4">
+                  <h5>
+                    <a
+                      class="fas fa-shopping-cart fs-3"
+                      href="../../products.html"
+                    >
+                    </a>
+                    <a class="fs-4 fw-4" href="../../products.html">Product</a>
+                  </h5>
+                </li>
+
+                <li class="nav-item">
+                  <h5>
+                    <a
+                      class="fas fa-cloud-upload-alt fs-3"
+                      href="../upload-product/productupload.html"
+                    >
+                    </a>
+                    <a
+                      class="fs-4 fw-4"
+                      href="../upload-product/productupload.html"
+                      >Upload-Product</a
+                    >
+                  </h5>
+                </li>
+              </ul>
+            </div>
+
+            <div class="offcanvas-footer">
+              <div
+                onclick="logoutUser('userData')"
+                class="btn w-75 fs-5 text-white mb-3"
+              >
+                Log out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-2">
+        <nav class="navbar d-flex justify-content-center">
+          <!-- <ul class="navbar-nav"> -->
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="../../index.html"
+              >Home</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../../products.html">products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="list-style: none"
+            >
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="../blog.html">Blogs</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../aboutus.html">about us</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="../contactus/contactus.html"
+                  >contact us</a
+                >
+              </li>
+            </ul>
+          </li>
+        </nav>
+      </div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- bottom navbar  -->
+
+    <nav class="bottom-navbar">
+      <a href="#Home" class="fas fa-home"></a>
+      <a href="#all-book" class="fas fa-list"></a>
+      <a href="#category" class="fas fa-tags"></a>
+      <a href="#Reviews" class="fas fa-comments"></a>
+      <a href="#Feedback" class="fas fa-comments"></a>
+      <a href="#Pages" class="fas fa-feedback"></a>
+    </nav>
+
+    <!-- Product View Section Start -->
+
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="p-2">
+              <img
+                id="productImage"
+                src="https://m.media-amazon.com/images/I/81bNLoiqISL._SY425_.jpg"
+                alt=""
+                style="height: 80vh"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h1 id="productTitle" style="color: #105a60" class="pb-4 fs-1">
+              One Fault
+            </h1>
+            <h2 id="productDescription" class="text-secondary fs-4 text pb-3">
+              Fast-paced and sizzling with a forbidden enemies-to-lovers
+              romance, Our Fault is the final book in Mercedes Ron's Culpable
+              trilogy.
+            </h2>
+            <h2 class="display-2 fs-1 fw-bold" style="color: #105a60">
+              Price
+              <span id="productPrice" style="color: #fc5350">$9.74</span> /-
+            </h2>
+
+            <div>
+              <button onclick="placeOrder()" class="btn">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./singleproduct.js"></script>
+  </body>
+</html>
